@@ -103,21 +103,25 @@ figure { width: 300px;}
 figcaption { text-align: center;
 			color: #ffffff;}/*--end swag formatting--*/
 
-form { 	background-color:#000000;
+#form { 	background-color:#000000;
 		color: #ffffff;
-		text-align: center;
-	font-family: Helvetica, sans-serif;
-    padding: 10px; 
-	min-width: 400px;}/*--Use on featured page to promote local bands--*/
-	label { float: left;
+		margin: auto;
+		font-family: Helvetica, sans-serif;
+        padding: 10px; 
+	    min-width: 400px;}/*--Use on featured page to promote local bands,menu--*/
+label { margin:auto;
+
 	width: 150px; 
-    clear: left;
-	text-align: right; 
+    font-size: 15px;
+	text-align: left; 
 	padding-right: 10px;
-	margin-top: 10px; }
-input, textarea { margin-top: 10px; 
-                  display: block; } 
-#mySubmit { margin-left: 160px; }
+	 }
+input, textarea { text-align: left;
+									
+                  margin: 10px; 
+                  display: block;
+					} 
+#mySubmit { margin: auto; }
 
 footer {margin: auto;
 	width: 500px;
