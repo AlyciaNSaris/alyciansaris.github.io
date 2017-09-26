@@ -17,6 +17,7 @@
 <div id="menu"><!--css for horizontal navigation-->
 	<ul>
 	<li><a href="index.html">Home</a></li>
+	
 	<li><a href="calendar.html">Calendar</a></li> 
 	<li><a href="featured.html">Featured Artist</a></li><!--Featuring noteworthy artist, can change monthly-->
 	<li><a href="gear.html">Gear</a></li><!--sometimes you need to shop-->
@@ -35,6 +36,8 @@
          document.write("<p>Welcome to None More Black.</p>");
          document.write("<p>This is a not for profit information only guide to the metal scene in the greater Phoenix area.</p>");
       </script>
+  
+
 
 
 <h2>The Funnies</h2><!--Again this can be switched monthly-->
@@ -42,62 +45,14 @@
    <img src="deathmetallabel.jpg" height="349" width="250" alt="Death Metal Label"><!--i think its funny-->
   </div>
 </div>
-
-<h2>The Menu</h2>
-		<!--add content to page using JavaScript -->
-		<script>
-			document.write("<p>Order your random compilation today.</p>");
-		</script>
-		
-	<div id ="form">
-		<Input type="checkBox" id="metal1" value=""/>
-		<label for="metal1">Black Metal ($6.66)</label>
-		<Input type="checkBox" id="metal2" value=""/>
-		<label for="metal2">Death Metal ($10.00)</label>
-		<Input type="checkBox" id="metal3" value=""/>
-		<label for="metal3">Sludge Metal ($9.99)</label>
-		<Input type="checkBox" id="metal4" value=""/>
-		<label for="metal4">Thrash Metal ($11.11)</label>
-		<Input type="checkBox" id="metal5" value=""/>
-		<label for="metal5">Extreme Metal ($11.11)</label>
-		<Input type="checkBox" id="metal6" value=""/>
-		<label for="metal6">Drone Metal ($10.00)</label>
-		<input type="submit" id="submit" value="Submit">
-	</div>
-	
 </article>
-</div>
-<script>
-//receive order and calculate total
-	function calcTotal() {
-		var itemTotal = 0;
-		var metal1 = document.getElementById("metal1");
-		var metal2 = document.getElementById("metal2");
-		var metal3 = document.getElementById("metal3");
-		var metal4 = document.getElementById("metal4");
-		var metal5 = document.getElementById("metal5");
-		var metal6 = document.getElementById("metal6");
-		(metal1.checked) ? (itemTotal += 6.66) : (itemTotal +=0);
-		(metal2.checked) ? (itemTotal += 10.00) : (itemTotal +=0);
-		(metal3.checked) ? (itemTotal += 9.99) : (itemTotal +=0);
-		(metal4.checked) ? (itemTotal += 11.11) : (itemTotal +=0);
-		(metal5.checked) ? (itemTotal += 11.11) : (itemTotal +=0);
-		(metal6.checked) ? (itemTotal += 10.00) : (itemTotal +=0);
-		var salesTaxRate = 0.08; //Tempe sales tax
-		itemTotal *= 100;
-		var orderTotal = (itemTotal + (itemTotal * salesTaxRate)) / 100;
-		alert("Your have ordered $" + orderTotal + " of Metal!!");
-	}
-	document.getElementById("submit").addEventListener("click", calcTotal, false);
-</script>
-
 <br>
 <br>
 <br>
 <footer>
 	Copyright &copy; 2017 None More Black<br>
 	<a href="mailto:metalalycia666@gmail.com">metalalycia666@gmail.com</a></footer><!--contact info-->
-
+</div>
 
 </body>
 </html>
