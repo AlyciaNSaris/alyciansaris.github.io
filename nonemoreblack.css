@@ -59,7 +59,7 @@ background-image: url(banner1.gif);/*--Another 35ml photo taken by me.--*/
 	    min-width: 400px;}
 	
 	
-}		
+		
 h2 { text-align: center;/*--I like the teal and aqua shadow--*/
 	text-shadow: 3px 2px 3px #00ffff;
 	font-family: Helvetica, Arial, sans-serif;
@@ -95,7 +95,7 @@ h4 {text-align: center;
 	color: #ffffff;
 	font-weight: normal;
 	font-size: 15px;
-	 }/*--basically used on the featured page to keep ththe page vibrant without alot of graphics--*/
+	 }/*--basically used on the featured page to keep the page vibrant without alot of graphics--*/
 .floatleft {	float: left;
 		padding: 10px 10px 10px 200px;
 		margin: auto;}/*--needed for featured page--*/
