@@ -51,6 +51,15 @@ background-image: url(banner1.gif);/*--Another 35ml photo taken by me.--*/
 	white-space: pre-wrap; }
 #gallery { text-align: center;
 		margin: auto; }	/*--I realizied i goofed when I changed the text margins, formatting change for swag page.--*/
+#myInput { background-color:#000000;
+		color: #ffffff;
+		margin: auto;
+		font-family: Helvetica, sans-serif;/*--formatting for trivia question--*/
+        padding: 10px; 
+	    min-width: 400px;}
+	
+	
+}		
 h2 { text-align: center;/*--I like the teal and aqua shadow--*/
 	text-shadow: 3px 2px 3px #00ffff;
 	font-family: Helvetica, Arial, sans-serif;
@@ -103,21 +112,26 @@ figure { width: 300px;}
 figcaption { text-align: center;
 			color: #ffffff;}/*--end swag formatting--*/
 
-form { 	background-color:#000000;
+#form { background-color:#000000;
 		color: #ffffff;
-		text-align: center;
-	font-family: Helvetica, sans-serif;
-    padding: 10px; 
-	min-width: 400px;}/*--Use on featured page to promote local bands--*/
-	label { float: left;
-	width: 150px; 
-    clear: left;
-	text-align: right; 
-	padding-right: 10px;
-	margin-top: 10px; }
-input, textarea { margin-top: 10px; 
-                  display: block; } 
-#mySubmit { margin-left: 160px; }
+		margin: auto;
+		font-family: Helvetica, sans-serif;
+        padding: 10px; 
+	    min-width: 400px;}/*--Use on featured page to promote local bands,menu--*/
+label { margin:auto;
+		width: 150px; 
+		font-size: 15px;
+		text-align: left; 
+		padding-right: 10px;
+		
+		
+	 }
+input, textarea { text-align: left;
+									
+                  margin: 10px; 
+                  display: block;
+					} 
+#mySubmit { margin: auto; }
 
 footer {margin: auto;
 	width: 500px;
