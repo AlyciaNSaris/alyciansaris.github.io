@@ -7,6 +7,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="nonemoreblack.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode/svn/trunk/html5.js"/>
+</script>
+<![endif]-->
 <script src="modernizr.custom.05819.js"></script>
 </head>
 <body>
@@ -43,6 +47,13 @@
 
 </div>
 <br>
+<!--Here is where I altered my form to handle valid/invalid input.
+Since names, band-names and comments can be anything, I only made the email input specific.
+I looked up the email validation codes on several different websites including W3C Schools, CodeProject and JavaScript Kit.
+The final result (function validateInput()) is a mix of the code from the websites.
+function validateInput() is called on submit button click and reverts the focus back to the required field where the error occured.
+I used the console in IE Explorer to look for errors as my main debugging technique. Also testing my program with incorrect input aided in my error locating.
+I commented out my non-working filter but left it in the code to display one debugging technique.-->
 <h4>Do you want your band featured on None More Black? Send me your information.</h4><!--Example of hands-on 1-4-->
 
 <h4>Required fields are marked with an asterisk*.</h4>  
@@ -52,29 +63,54 @@
 <form method="post" action="mailto:metalalycia666@gmail.com"><!--my email-->
   <label for="myName">
     *Name:
-  
   <input type="text" name="myName" id="myName" required="required" placeholder="your first and last name">
   </label>
   <label for="myEmail">
     *E-mail:
-  
   <input type="email" name="myEmail" id="myEmail"required="required" placeholder="you@yourdomain.com">
   </label>
-  <label for="band-name">
+  <label for="bandname">
     *Band Name:
-  
-  <input type="text" name="band-name" id="band-name" required="required" placeholder="band-name">
+  <input type="text" name="bandname" id="band-name" required="required" placeholder="band-name">
   </label>
   <label for="myComments">
     Comments:
-  
-  <textarea name="myComments" id="myComments" rows="4" cols="40"required="required"></textarea>
+  <textarea name="myComments" id="myComments" rows="4" cols="40"></textarea>
   </label>
 </fieldset>  
 </div>
 <fieldset id="submitButton">
-  <input id="mySubmit" type="submit" value="Submit" onclick="alert('Thank you for your submission.')";> 
+  <input id="mySubmit" type="submit" value="Submit" onclick="Javascript:validateInput();"> 
 </fieldset>
+<script language="javascript">
+
+function validateInput() {
+<!--declare local variables-->
+	var myName = document.getElementById('myName');
+    var myEmail = document.getElementById('myEmail');
+	var bandname = document.getElementById('band-name');
+<!--filter code courtesy of JavaScript Kit-->	
+    var filter = /*^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/);*/
+	/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+
+	
+<!--W3C Schools and CodeProject helped build the block of code to test validity-->
+	if (myName == "")
+		throw "Please enter a name.";
+		myName.focus;
+		return false;
+		
+    if (!filter.test(email.value)) {
+		throw "Please provide a valid email address.";
+		email.focus;
+		return false;
+	}	
+	if (band-name == "")
+		throw "Please enter your bands name.";
+        return false;		
+ 
+}</script>
+
 
 
 </article>
