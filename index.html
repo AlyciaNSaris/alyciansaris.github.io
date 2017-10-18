@@ -2,11 +2,15 @@
 <html lang="en">
 <head><!--None More Black
 		  Author: Alycia Saris
-		  Date:9/11/2017-->
+		  Date:10/01/2017-->
 <title>nonemoreblack-home</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--This is where I made my site mobile friendly-->
 <link href="nonemoreblack.css" rel="stylesheet">
+<!--[if lt IE 9]><!--I made file with this shim on it to easily paste it on all my pages>
+<script src="http://html5shim.googlecode/svn/trunk/html5.js">
+</script>
+<![endif]-->
 <script src="modernizr.custom.05819.js"></script><!--JavaScript file-->
 </head>
 <body>
@@ -21,6 +25,7 @@
 	<li><a href="featured.html">Featured Artist</a></li><!--Featuring noteworthy artist, can change monthly-->
 	<li><a href="gear.html">Gear</a></li><!--sometimes you need to shop-->
 	<li><a href="venues.html">Venues</a></li><!--This is info I have often wondered about-->
+	<li><a href="webSecurity.html">Security</a></li><!--link to web security info NEW-->
 </ul>
 </div>
 </nav>
@@ -36,12 +41,14 @@
          document.write("<p>This is a not for profit information only guide to the metal scene in the greater Phoenix area.</p>");
       </script>
 
-
+</div>
 <h2>The Funnies</h2><!--Again this can be switched monthly-->
+  
   <div id="figure"><!--css to center image-->
-   <img src="deathmetallabel.jpg" height="349" width="250" alt="Death Metal Label"><!--i think its funny-->
+		<img src="deathmetallabel.jpg" height="349" width="250" alt="Death Metal Label"><!--i think its funny-->
   </div>
-  <div id = "text"><!--begin trivia, begin JavaScript for Chapter 3 assignment -->
+ 
+ <div id = "text"><!--begin trivia, begin JavaScript for Chapter 3 assignment -->
 	
 	<script>
 	//Use of JavaScript to add content to page
@@ -52,11 +59,12 @@
 	<input id = "myInput" type = "text"><!--format textbox for input-->
 	
 	<fieldset id="submitButton">
-		<input id="mySubmit" type="submit" value="Submit" onclick="alert(metalTrivia())";> <!--function call routed to alert box on submit button click-->
+		<input id="mySubmit" type="button" value="Submit" onclick="metalTrivia();"><!--call to function-->
+		
 	</fieldset>
 
 	
-	<p id = "text">
+	<p>
 	<script>
 	// begin function to execute switch statements
 	function metalTrivia() {
@@ -65,26 +73,28 @@
 		
 		switch (metalIcons) {
 			case "Nigel Tufnel":
-				alert("Crank it to 11! You know your metal!");
+				divOutput.innerHTML = "Crank it to 11, You know your metal!!";				
 			break;
 			case "Ozzy Osbourne":
-				alert("A living legend, but incorrect.");
+				divOutput.innerHTML = "A living legend, but incorrect";
 			break;
 			case "Lemmy Kilmeister":
-				alert("RIP Lemmy. A metal god and an incorrect answer.");
+				divOutput.innerHTML = "RIP Lemmy. A metal god and an incorrect answer.";
 			break;
 			default:
-				alert("Just watch 'This is Spinal Tap'.");
+				divOutput.innerHTML = "Just watch 'This is Spinal Tap'.";
 		}
 		
 	}
 	</script>
-	
+	</p>
 
-  </div> <!--end trivia-->
-</div>
+</div> <!--end trivia-->
+
+
 
 <h2>The Menu</h2>
+
 		<!--add content to page using JavaScript -->
 		<div id = "text">
 			<script>

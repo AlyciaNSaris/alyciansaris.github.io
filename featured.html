@@ -25,6 +25,7 @@
 	<li><a href="featured.html">Featured Artist</a></li>
 	<li><a href="gear.html">Gear</a></li>
 	<li><a href="venues.html">Venues</a></li>
+	<li><a href="webSecurity.html">Security</a></li><!--link to web security info NEW-->
 </ul>
 </div>
 </nav>
@@ -90,11 +91,9 @@ function validateInput() {
     var myEmail = document.getElementById('myEmail');
 	var bandname = document.getElementById('band-name');
 <!--filter code courtesy of JavaScript Kit-->	
-    var filter = /*^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/);*/
-	/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 
-	
-<!--W3C Schools and CodeProject helped build the block of code to test validity-->
+
 	if (myName == "")
 		throw "Please enter a name.";
 		myName.focus;

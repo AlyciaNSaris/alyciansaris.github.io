@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!--None More Black
+		  Author: Alycia Saris
+		  Date: 2017-10-16-->
+<title>nonemoreblack-webSecurity</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--This is where I made my site mobile friendly-->
+<link href="nonemoreblack.css" rel="stylesheet">
+<!--[if lt IE 9]><!--I made file with this shim on it to easily paste it on all my pages>
+<script src="http://html5shim.googlecode/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<script src="modernizr.custom.05819.js"></script><!--JavaScript file-->
+</head>
+<body>
+<div id="wrapper"><!-- CSS Adds some flare to my page-->
+<header><h1>None More Black</h1></header>
+<br>
+<nav>
+<div id="menu"><!--css for horizontal navigation-->
+	<ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="calendar.html">Calendar</a></li> 
+	<li><a href="featured.html">Featured Artist</a></li><!--Featuring noteworthy artist, can change monthly-->
+	<li><a href="gear.html">Gear</a></li><!--sometimes you need to shop-->
+	<li><a href="venues.html">Venues</a></li><!--This is info I have often wondered about-->
+	<li><a href="webSecurity.html">Security</a></li><!--link to web security info NEW-->
+</ul>
+</div>
+</nav>
+
+<h2>Web Security Info</h2>
+
+<article>
+<div id = "info1">
+<script>
+
+"use strict";
+
+document.write("<p>In today's society, web security should be on the forefront of eveyone's mind.</p>");
+document.write("<p>Unfortunately, alot of people are unaware of the security risks involved in browsing the web.</p>");
+document.write("<p>Here are three websites to check out so you can assess your web security risk level.</p>");
+document.write("<p></p>");
+</script>
+
+<!--links to websites with valuable information-->
+<ul>
+<li><a href="https://www.getsafeonline.org/protecting-your-computer/safe-internet-use/">getsafeonline.org</a></li>
+<p>The website getsafeonline.org provides information for all internet users. It is a must read for all.</p>
+<li><a href="https://www.cnet.com/how-to/6-ways-to-use-public-wi-fi-hot-spots-safely/">cnet.com</a></li>
+<p>The website cnet.com contains valuable information pertaining to those of us that enjoy using the internet on the go. Many forget that free Wi-Fi at a public spot is very risky. cnet.com provides some tips if you enjoy utilizing these hotspots.</p> 
+<li><a href="https://www.techtricksworld.com/dark-web/">techtricksworld.com</a></li>
+<p>For the advanced level web user, techtricksworld.com provides some tips for surfing the notorious Dark Web. You may find a hacker trying to access your computer or you may find the FBI knocking on your virtual door.</p>
+</ul>
+<p>Javascript provides the Navigator object to obtain information about the current browser.</p>
+<p>It has the abilty to provide information regarding the current browser to the user. Although it is used for diagnostic purposes, this is the information hackers can access about you.</p>
+<p>Your web information is displayed below.</p>
+   <!--displays Navigator information -->
+   
+   <p1></p1><br>
+   <p1></p1><br>
+   <p1></p1><br>
+   <p1></p1><br>
+   <p1></p1><br>
+   <p1></p1><br>
+<script>
+"use strict";
+//calls Navigator 
+document.getElementsByTagName("p1")[0].innerHTML = "Web browser name: " + navigator.appName;
+document.getElementsByTagName("p1")[1].innerHTML = "Web browser version: " + navigator.appVersion;
+document.getElementsByTagName("p1")[2].innerHTML = "Operating platform: " + navigator.platform;
+document.getElementsByTagName("p1")[3].innerHTML = "User agent: " + navigator.userAgent;
+document.getElementsByTagName("p1")[4].innerHTML = "Online presence: "  + navigator.onLine;
+document.getElementsByTagName("p1")[5].innerHTML = "Current position: " + navigator.geolocation;
+
+</script>   
+   
+</div>
+<br>
+<br>
+<br>
+<footer>
+	Copyright &copy; 2017 None More Black<br>
+	<a href="mailto:metalalycia666@gmail.com">metalalycia666@gmail.com</a>
+</footer><!--contact info-->
+
+</article>
+</body>

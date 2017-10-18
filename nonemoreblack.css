@@ -49,6 +49,16 @@ background-image: url(banner1.gif);/*--Another 35ml photo taken by me.--*/
 	width: 800px;/*--i played with the margins and spacing quite a bit to have a more polished look--*/
 	margin:auto;
 	white-space: pre-wrap; }
+	
+#info1 {text-align:left;
+		color:#ffffff;
+		font-size: 15px;
+		font-family: Helvetica, Arial, sans-serif;
+		font-weight:normal;
+		width: 800px;
+		margin:auto;
+			
+}	
 #gallery { text-align: center;
 		margin: auto; }	/*--I realizied i goofed when I changed the text margins, formatting change for swag page.--*/
 #myInput { background-color:#000000;
@@ -127,8 +137,7 @@ label { margin:auto;
 		
 	 }
 input, textarea { text-align: left;
-									
-                  margin: 10px; 
+				  margin: 10px; 
                   display: block;
 					} 
 #mySubmit { margin: auto; }
