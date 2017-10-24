@@ -50,12 +50,12 @@ background-image: url(banner1.gif);/*--Another 35ml photo taken by me.--*/
 	margin:auto;
 	white-space: pre-wrap; }
 	
-#info1 {text-align:left;
+#paymentInfo {text-align:left;
 		color:#ffffff;
 		font-size: 15px;
 		font-family: Helvetica, Arial, sans-serif;
 		font-weight:normal;
-		width: 800px;
+		width: 1000px;
 		margin:auto;
 			
 }	
@@ -67,9 +67,22 @@ background-image: url(banner1.gif);/*--Another 35ml photo taken by me.--*/
 		font-family: Helvetica, sans-serif;/*--formatting for trivia question--*/
         padding: 10px; 
 	    min-width: 400px;}
-	
-	
-		
+fieldset div.errorMessage, #ccNumErrorMessage, #cvvErrorMessage {
+   color: #ffffff;
+   position: relative;
+   top: 50px;
+   line-height: 1.2em;
+}
+#errorText, fieldset div.errorMessage, #ccNumErrorMessage, #cvvErrorMessage {
+   display: none;
+   text-align: center;
+   padding: 10px;
+   margin: 0 auto;
+   margin: 15px 15px 0;
+   background: rgb(124,124,136);
+   color: white;
+   border: 2px solid rgb(190,50,38);	
+}
 h2 { text-align: center;/*--I like the teal and aqua shadow--*/
 	text-shadow: 3px 2px 3px #00ffff;
 	font-family: Helvetica, Arial, sans-serif;
@@ -128,19 +141,27 @@ figcaption { text-align: center;
 		font-family: Helvetica, sans-serif;
         padding: 10px; 
 	    min-width: 400px;}/*--Use on featured page to promote local bands,menu--*/
+#address, #paymentinfo {background-color:#000000;
+		color: #ffffff;
+		margin: auto;
+		font-family: Helvetica,sans-serif;}
+		
 label { margin:auto;
 		width: 150px; 
 		font-size: 15px;
 		text-align: left; 
-		padding-right: 10px;
+		}	
+
+
 		
-		
-	 }
+	 
 input, textarea { text-align: left;
 				  margin: 10px; 
                   display: block;
 					} 
-#mySubmit { margin: auto; }
+#mySubmit { margin: auto;
+			
+}
 
 footer {margin: auto;
 	width: 500px;
