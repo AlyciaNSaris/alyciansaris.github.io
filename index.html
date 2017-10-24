@@ -114,9 +114,134 @@
 		<label for="metal5">Extreme Metal ($11.11)</label>
 		<input type="checkBox" id="metal6" value=""/>
 		<label for="metal6">Drone Metal ($10.00)</label>
-		<input type="submit" id="submit" value="Submit">
+	<!--	<input type="submit" id="submit" value="Submit">-->
 	</div>
-	
+<div>
+<!--Additions for chaprer 6 assignment.-->
+
+<form novalidate="novalidate">
+<fieldset id="address">
+<h4>Address</h4>
+<label for="Fname">First Name</label>
+<input id ="Fname" name="FirstName" type="text" required="required"/>
+<label for="LName">Last Name</label>
+<input id="LName" name="LastName" type="text" required="required"/>
+<label for="Street">Street Address</label>
+<input id="Street" name="Street" type="text" required="required"/>
+<label for="City">City</label>
+<input id="City" name="City" type="text" required="required"/>
+<label for="State">State</label>
+<select id="State" name="State" required="required">
+<option value="AL">AL</option>
+               <option value="AK">AK</option>
+               <option value="AZ">AZ</option>
+               <option value="AR">AR</option>
+               <option value="CA">CA</option>
+               <option value="CO">CO</option>
+               <option value="CT">CT</option>
+               <option value="DE">DE</option>
+               <option value="DC">DC</option>
+               <option value="FL">FL</option>
+               <option value="GA">GA</option>
+               <option value="HI">HI</option>
+               <option value="ID">ID</option>
+               <option value="IL">IL</option>
+               <option value="IN">IN</option>
+               <option value="IA">IA</option>
+               <option value="KS">KS</option>
+               <option value="KY">KY</option>
+               <option value="LA">LA</option>
+               <option value="ME">ME</option>
+               <option value="MD">MD</option>
+               <option value="MA">MA</option>
+               <option value="MI">MI</option>
+               <option value="MN">MN</option>
+               <option value="MS">MS</option>
+               <option value="MO">MO</option>
+               <option value="MT">MT</option>
+               <option value="NE">NE</option>
+               <option value="NV">NV</option>
+               <option value="NH">NH</option>
+               <option value="NJ">NJ</option>
+               <option value="NM">NM</option>
+               <option value="NY">NY</option>
+               <option value="NC">NC</option>
+               <option value="ND">ND</option>
+               <option value="OH">OH</option>
+               <option value="OK">OK</option>
+               <option value="OR">OR</option>
+               <option value="PA">PA</option>
+               <option value="RI">RI</option>
+               <option value="SC">SC</option>
+               <option value="SD">SD</option>
+               <option value="TN">TN</option>
+               <option value="TX">TX</option>
+               <option value="UT">UT</option>
+               <option value="VT">VT</option>
+               <option value="VA">VA</option>
+               <option value="WA">WA</option>
+               <option value="WV">WV</option>
+               <option value="WI">WI</option>
+               <option value="WY">WY</option>
+            </select><br>
+<label for="Zip">Zip</label>
+<input id="Zip" name="Zip" type="number" required="required"/>
+
+<div class="errorMessage"></div>
+</fieldset>
+
+<br>
+</div>
+<fieldset id="paymentInfo">
+<h4>Enter Payment Info</h4>
+<div id ="cards">
+<input id="visa" name="PaymentType" type="radio" value="Visa"/>
+<label for="visa">Visa</label>
+<input id="mastercard" name="PaymentType" type="radio" value="Mastercard"/>
+<label for="mastercard">Mastercard</label>
+<input id="amEx" name="PaymentType" type="radio" value="AmericanExpress"/>
+<label for="amEx">American Express</label>
+</div>
+<div>
+<label for="ccNum">Card #</label>
+<input id="ccNum" name="CardNumber" type="number" required="required"/>
+<div id="ccNumErrorMessage"></div>
+</div>
+<div>
+<label for="expMonth" id="expMonLabel">Expiration Month</label>
+	<select id="expMonth" name="ExpMonth" required="required">
+		<option value="01">01</option>
+		<option value="02">02</option>
+		<option value="03">03</option>
+		<option value="04">04</option>
+		<option value="05">05</option>
+		<option value="06">06</option>
+		<option value="07">07</option>
+		<option value="08">08</option>
+		<option value="09">09</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+	</select><br>
+<label for="expYear" id="expYearLabel">Expiration Year</label>
+	<select id="expYear" name="ExpYear" required="required">
+		<option value="2017">2017</option>
+		<option value="2018">2018</option>
+		<option value="2019">2019</option>
+		<option value="2020">2020</option>
+		<option value="2021">2021</option>
+		<option value="2022">2022</option>
+	</select><br>
+<label for="cvv">CVV #</label>
+<input id="cvv" name="CVVValue" type="number" required="required"/>
+<div id="cvvErrorMessage"></div>
+<div class="errorMessage"></div>
+</div>
+</fieldset>
+</form>
+<fieldset id="submitButton">
+  <input id="mySubmit" type="submit" value="Submit" onclick="alert('Thank you for your order')";>
+</fieldset>	
 </article>
 </div>
 <script>
@@ -138,9 +263,9 @@
 		var salesTaxRate = 0.08; //Tempe sales tax
 		itemTotal *= 100;
 		var orderTotal = (itemTotal + (itemTotal * salesTaxRate)) / 100;
-		alert("Your have ordered $" + orderTotal + " of Metal!!");
+		
 	}
-	document.getElementById("submit").addEventListener("click", calcTotal, false);
+	document.getElementById("Order").addEventListener("click", calcTotal, false);
 </script>
 
 <br>
@@ -151,6 +276,6 @@
 	<a href="mailto:metalalycia666@gmail.com">metalalycia666@gmail.com</a>
 </footer><!--contact info-->
 
-
+<script src="script.js"></script>
 </body>
 </html>
