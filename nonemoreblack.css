@@ -3,19 +3,19 @@
 	
 body {background-image: url(stage.gif);/*--This photo was taken with my 35ml camera and altered to make a unique background.--*/
 	background-color: #000000;
-  font-family: Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 }
 #wrapper { background-color: #000000;/*--Of course its black--*/
 			width: 1000px;
 			margin-left: auto;
 			margin-right: auto;} 
 h1 {background-color: #000000;
-background-image: url(banner1.gif);/*--Another 35ml photo taken by me.--*/
-		background-position: center;
-		background-repeat: no-repeat;
-		height: 100px;
-		width: 1000px;
-		margin: 0px;
+	background-image: url(banner1.gif);/*--Another 35ml photo taken by me.--*/
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100px;
+	width: 1000px;
+	margin: 0px;
 	text-indent: 100%;
 	white-space: nowrap;
     overflow: hidden;	
@@ -23,7 +23,7 @@ background-image: url(banner1.gif);/*--Another 35ml photo taken by me.--*/
 	border-radius: 15px;}/*--This mild touch gave the site a polished look--*/
 #menu {	width: 1000px;/*--I chose to format the navigation this way because I like it.--*/
 	height: 50px;/*--I had to find the instructions online, well worth it--*/
-	font-size: 20px;
+	font-size: 15px;
 	font-family: Helvetica, Arial, sans-serif; 
 	font-weight: bold;
 	text-align: center;
@@ -135,7 +135,7 @@ figure { width: 300px;}
 figcaption { text-align: center;
 			color: #ffffff;}/*--end swag formatting--*/
 
-#form { background-color:#000000;
+#form, #info1 { background-color:#000000;
 		color: #ffffff;
 		margin: auto;
 		font-family: Helvetica, sans-serif;
@@ -151,16 +151,16 @@ label { margin:auto;
 		font-size: 15px;
 		text-align: left; 
 		}	
+#time{	margin: auto;
+		text-align: center;
+		color: #ffffff;}		
 
-
-		
-	 
 input, textarea { text-align: left;
 				  margin: 10px; 
                   display: block;
 					} 
-#mySubmit { margin: auto;
-			
+#mySubmit, #button { margin: auto;
+			text-align:center;
 }
 
 footer {margin: auto;

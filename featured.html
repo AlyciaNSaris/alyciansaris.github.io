@@ -26,7 +26,8 @@
 	<li><a href="gear.html">Gear</a></li>
 	<li><a href="venues.html">Venues</a></li>
 	<li><a href="webSecurity.html">Security</a></li><!--link to web security info NEW-->
-</ul>
+	<li><a href="clock.html">Clock</a></li><!--link to ch.7 project-->
+	</ul>
 </div>
 </nav>
 <article>
@@ -83,32 +84,47 @@ I commented out my non-working filter but left it in the code to display one deb
 <fieldset id="submitButton">
   <input id="mySubmit" type="submit" value="Submit" onclick="Javascript:validateInput();"> 
 </fieldset>
-<script language="javascript">
-
+<script>
+<!--CORRECTED CODE FROM CHAPTER 4-->
+<!--WORK IN PROGRESS. finally went through and re-did chapter 4-->
 function validateInput() {
-<!--declare local variables-->
-	var myName = document.getElementById('myName');
-    var myEmail = document.getElementById('myEmail');
-	var bandname = document.getElementById('band-name');
-<!--filter code courtesy of JavaScript Kit-->	
+	
     var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 
-
-	if (myName == "")
+try{
+	var myName= document.getElementById("myName");
+	if (myName === ""){
 		throw "Please enter a name.";
-		myName.focus;
 		return false;
-		
-    if (!filter.test(email.value)) {
+	}		
+}
+catch{
+
+}
+try{ 
+	var myEmail = document.getElementById("myEmail");
+	if (!filter.test(myEmail.value) || (myEmail === "")) {
 		throw "Please provide a valid email address.";
-		email.focus;
 		return false;
-	}	
-	if (band-name == "")
+		}
+}
+catch{
+
+}
+try{
+	var bandname = document.getElementById("bandname")
+	if(bandname == ""){
 		throw "Please enter your bands name.";
-        return false;		
+		return false;
+    }	
+}
+catch(message){
+	console.log(message);
+	
+}
  
-}</script>
+}
+</script>
 
 
 
