@@ -41,7 +41,7 @@ h1 {background-color: #000000;
 		padding: 8px 8px 8px 8px;}
 #menu a:hover{ color: #dd0000;/*--end navigation--*/
 		 }
-#text { text-align: center;/*--I used this id throughout the site so that my text would appear on the page like a concert t shirt--*/
+#text, #section, #selectedAlbums { text-align: center;/*--I used this id throughout the site so that my text would appear on the page like a concert t shirt--*/
 		color:#ffffff;/*--shows up on black--*/
 		font-size: 15px;
 	font-family: Helvetica, Arial, sans-serif; 
@@ -134,10 +134,16 @@ li { display: inline-block;
 figure { width: 300px;}
 figcaption { text-align: center;
 			color: #ffffff;}/*--end swag formatting--*/
-
-#form, #info1 { background-color:#000000;
+#info1, { background-color:#000000;
 		color: #ffffff;
 		margin: auto;
+			
+		font-family: Helvetica, sans-serif;
+        padding: 10px; 
+	    min-width: 400px;}
+#form { background-color:#000000;
+		color: #ffffff;
+		margin: auto;		
 		font-family: Helvetica, sans-serif;
         padding: 10px; 
 	    min-width: 400px;}/*--Use on featured page to promote local bands,menu--*/
@@ -150,7 +156,8 @@ label { margin:auto;
 		width: 150px; 
 		font-size: 15px;
 		text-align: left; 
-		}	
+		}
+
 #time{	margin: auto;
 		text-align: center;
 		color: #ffffff;}		

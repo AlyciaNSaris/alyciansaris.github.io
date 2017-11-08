@@ -42,8 +42,87 @@
          document.write("<p>This is a not for profit information only guide to the metal scene in the greater Phoenix area.</p>");
       </script>
 
+</div><!--Chapter 8 project-->
+<div id="form">
+<h4>Please select your favorite Behemoth albums</h4>
+	<fieldset id="info1">
+	<input type="checkBox" id="grom" value="Grom" name="albums">
+	<label for="grom" id="gromLabel">Grom</label>
+	<input type="checkBox" id="demigod" value="Demigod" name="albums">
+	<label for="demigod" id="demigodLabel">Demigod</label>
+	<input type="checkBox" id="apostasy" value="The Apostasy" name="albums">
+	<label for="apostasy" id="apostasyLabel">The Apostasy</label>
+	<input type="checkBox" id="evangelion" value="Evangelion" name="albums">
+	<label for="evangelion" id="evangelionLabel">Evangelion</label>
+	<input type="checkBox" id="zos" value="Zos Kia Cultus" name="albums">
+	<label for="zos" id="zosLabel">Zos Kia Cultus</label>
+	</fieldset>
 </div>
+<section id="selection">
+	<div id="albumSelectSection">
+	  <h4>Selected Albums</h4>
+	  <ul id="selectedAlbums"></ul>
+	</div>
+</section>
+<script>
+/* global variables */
+var selection = {}; // selction object
+var album = []; // empty array
+function chooseAlbum(event){
+	if (event === undefined){ // get caller element in IE8
+		event = window.event;
+	}
+	var callerElement = event.target || event.srcElement;
+	var albumName = callerElement.value;
+	if (callerElement.checked){ // box checked by user
+		album.push(albumName); //add album to list via checkbox
+		var newAlbum = document.createElement("li");
+		newAlbum.innerHTML = albumName;
+		document.getElementById("selectedAlbums").appendChild(newAlbum); // add album to array
+		//display array to screen
+		document.getElementById("selection").style.display = "block";
+		document.getElementById("albumSelectSection").style.display = "block";
+		}else { // box unchecked
+		  var listItems= document.querySelectorAll("#selectedAlbums li");
+			for (var i = 0; i < listItems.length; i++){ // loop through array
+				if(listItems[i].innerHTML === albumName) { // remove item from list
+					album.splice(i, 1);
+					listItems[i].parentNode.removeChild(listItems[i]);
+				}
+			}
+	}
+}
+// convert form input to strings fo
+function convertToString() {
+   // convert album array to string
+   arrayString = album.toString();
+   // convert profile object to string
+   objectString = JSON.stringify(selection);
+}
+      
+        
+function createEventListener(){
+	var albums = document.getElementsByName("albums");
+	if (albums[0].addEventListener) {
+		for (var i = 0; i < albums.length; i++) {
+        albums[i].addEventListener("change", chooseAlbum, false);
+		}
+	} else if (albums[0].attachEvent) {
+     for (var i = 0; i < albums.length; i++) {
+         albums[i].attachEvent("onchange", chooseAlbum);
+      }
+		
+      }
+	 
+}
+if (window.addEventListener) {
+   window.addEventListener("load", createEventListener, false);
+} else if (window.attachEvent) {
+   window.attachEvent("onload", createEventListener);
+}
 
+</script>
+<!--end chapter 8 project-->
 
 <h2>The Funnies</h2><!--Again this can be switched monthly-->
   
@@ -104,9 +183,9 @@
 				document.write("<p>Order your random compilation today.</p>");
 			</script>
 		</div>
-	<div id ="form">
+	<div id ="info1">
 		<input type="checkBox" id="metal1" value=""/><!--Still playing with formatting, not satisfied with layout.-->
-		<label for="metal1">Black Metal ($6.66)</label>
+		<label class="checks" for="metal1">Black Metal ($6.66)</label>
 		<input type="checkBox" id="metal2" value=""/>
 		<label for="metal2">Death Metal ($10.00)</label>
 		<input type="checkBox" id="metal3" value=""/>
@@ -249,27 +328,8 @@
 </article>
 </div>
 <script>
-//receive order and calculate total
-	function calcTotal() {
-		var itemTotal = 0;
-		var metal1 = document.getElementById("metal1");// get input from check boxes
-		var metal2 = document.getElementById("metal2");
-		var metal3 = document.getElementById("metal3");
-		var metal4 = document.getElementById("metal4");
-		var metal5 = document.getElementById("metal5");
-		var metal6 = document.getElementById("metal6");
-		(metal1.checked) ? (itemTotal += 6.66) : (itemTotal +=0);//calculate total, dicimals still need formatting
-		(metal2.checked) ? (itemTotal += 10.00) : (itemTotal +=0);
-		(metal3.checked) ? (itemTotal += 9.99) : (itemTotal +=0);
-		(metal4.checked) ? (itemTotal += 11.11) : (itemTotal +=0);
-		(metal5.checked) ? (itemTotal += 11.11) : (itemTotal +=0);
-		(metal6.checked) ? (itemTotal += 10.00) : (itemTotal +=0);
-		var salesTaxRate = 0.08; //Tempe sales tax
-		itemTotal *= 100;
-		var orderTotal = (itemTotal + (itemTotal * salesTaxRate)) / 100;
-		
-	}
-	document.getElementById("Order").addEventListener("click", calcTotal, false);
+//receive order and calculate total moved to script page
+
 </script>
 
 <br>
