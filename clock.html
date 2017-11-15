@@ -56,6 +56,7 @@ function calculateTime(){
 	var days;
 	var months;
 	var years;
+	var daysLeft;
 	var selection = document.getElementById("dateSelected");
 	var dateObject = new Date(selection.value);
 	var result = document.getElementById("time");
@@ -70,7 +71,8 @@ function calculateTime(){
 		years = Math.floor(dayDif / 365.2);
 		monthDif = Math.floor(dayDif % 365.2);
 		months = Math.floor(monthDif / 31);
-		days = Math.floor(months % 31);
+		
+		days = Math.floor(monthDif % 31);
 		var elapseTime = years + " years, " + months + " months, " + days + " days."; 	
 		document.getElementById("time").innerHTML = elapseTime;
 	} else if (selectedDate > fullDateToday){//determine order of calculation
@@ -79,7 +81,8 @@ function calculateTime(){
 		years = Math.floor(dayDif / 365.2);
 		monthDif = Math.floor(dayDif % 365.2);
 		months = Math.floor(monthDif / 31);
-		days = Math.floor(months % 31);
+		
+		days = Math.floor(monthDif % 31);
 		var elapseTime = years + " years, " + months + " months, " + days + " days."; 	
 		document.getElementById("time").innerHTML = elapseTime;
 	}
