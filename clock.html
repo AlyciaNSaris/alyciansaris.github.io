@@ -32,11 +32,12 @@
 </nav>
 <br>
 <br<!--basic form for user input-->
-<div id = "text">
+<div id="text">
 		<h3>Select a Date</h3>
 		<p>Enter a date in the format MM/DD/YYYY:</p>
-		<input id="myInput" type="date" id="dateSelected"/>
-	
+		<!--corrected code-->
+		<input type="date" id="dateSelected"/>
+		
 		<button type="button" id="figureTime">Figure Time</button>
 	
 		<h3>Elapsed Time</h3>
@@ -46,7 +47,7 @@
 </div>
 <script>
 
-/*function to calculate time was a major struggle. Displays nicely but wrong output.*/
+/*CODE CORRECTED ON 11/12/2017 */
 
 function calculateTime(){
 	var dayDif;
@@ -56,7 +57,7 @@ function calculateTime(){
 	var months;
 	var years;
 	var selection = document.getElementById("dateSelected");
-	var dateObject = new Date(selection);
+	var dateObject = new Date(selection.value);
 	var result = document.getElementById("time");
 	var fullDateToday = new Date();
 	var dateToday = Date.UTC(fullDateToday.getFullYear(), fullDateToday.getMonth(), fullDateToday.getDate());
@@ -67,7 +68,8 @@ function calculateTime(){
 		//calculate days.
 		dayDif = Math.floor((fullDateToday - selectedDate) / 86400000);//milliseconds in a day
 		years = Math.floor(dayDif / 365.2);
-		months = Math.floor(years / 12.0);
+		monthDif = Math.floor(dayDif % 365.2);
+		months = Math.floor(monthDif / 31);
 		days = Math.floor(months % 31);
 		var elapseTime = years + " years, " + months + " months, " + days + " days."; 	
 		document.getElementById("time").innerHTML = elapseTime;
@@ -75,7 +77,8 @@ function calculateTime(){
 		//calculate days.
 		dayDif = Math.floor((selectedDate - fullDateToday) / 86400000);
 		years = Math.floor(dayDif / 365.2);
-		months = Math.floor(years / 12.0);
+		monthDif = Math.floor(dayDif % 365.2);
+		months = Math.floor(monthDif / 31);
 		days = Math.floor(months % 31);
 		var elapseTime = years + " years, " + months + " months, " + days + " days."; 	
 		document.getElementById("time").innerHTML = elapseTime;

@@ -49,13 +49,7 @@
 
 </div>
 <br>
-<!--Here is where I altered my form to handle valid/invalid input.
-Since names, band-names and comments can be anything, I only made the email input specific.
-I looked up the email validation codes on several different websites including W3C Schools, CodeProject and JavaScript Kit.
-The final result (function validateInput()) is a mix of the code from the websites.
-function validateInput() is called on submit button click and reverts the focus back to the required field where the error occured.
-I used the console in IE Explorer to look for errors as my main debugging technique. Also testing my program with incorrect input aided in my error locating.
-I commented out my non-working filter but left it in the code to display one debugging technique.-->
+
 <h4>Do you want your band featured on None More Black? Send me your information.</h4><!--Example of hands-on 1-4-->
 
 <h4>Required fields are marked with an asterisk*.</h4>  
@@ -73,7 +67,7 @@ I commented out my non-working filter but left it in the code to display one deb
   </label>
   <label for="bandname">
     *Band Name:
-  <input type="text" name="bandname" id="band-name" required="required" placeholder="band-name">
+  <input type="text" name="bandname" id="bandname" required="required" placeholder="band-name">
   </label>
   <label for="myComments">
     Comments:
@@ -86,35 +80,28 @@ I commented out my non-working filter but left it in the code to display one deb
 </fieldset>
 <script>
 <!--CORRECTED CODE FROM CHAPTER 4-->
-<!--WORK IN PROGRESS. finally went through and re-did chapter 4-->
+<!--Finally got this working the way I intended.  Reviewed chapter 4 thouroughly. Thank you for your help.-->
 function validateInput() {
-	
-    var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-
-try{
-	var myName= document.getElementById("myName");
+	var myName= document.getElementById("myName").value;
+    var myEmail = document.getElementById("myEmail").value;
+	var bandname = document.getElementById("bandname").value;
+	var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+<!--email validation also coincides with chapter 9-->
+try{	
 	if (myName === ""){
 		throw "Please enter a name.";
+		myName.focus;
 		return false;
-	}		
-}
-catch{
-
-}
-try{ 
-	var myEmail = document.getElementById("myEmail");
+	}
 	if (!filter.test(myEmail.value) || (myEmail === "")) {
 		throw "Please provide a valid email address.";
+		myEmail.focus;
 		return false;
 		}
-}
-catch{
 
-}
-try{
-	var bandname = document.getElementById("bandname")
-	if(bandname == ""){
+	if (bandname == ""){
 		throw "Please enter your bands name.";
+		bandname.focus;
 		return false;
     }	
 }

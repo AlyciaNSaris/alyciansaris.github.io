@@ -61,7 +61,7 @@ h1 {background-color: #000000;
 }	
 #gallery { text-align: center;
 		margin: auto; }	/*--I realizied i goofed when I changed the text margins, formatting change for swag page.--*/
-#myInput { background-color:#000000;
+#myInput, #dateSelected { background-color:#000000;
 		color: #ffffff;
 		margin: auto;
 		font-family: Helvetica, sans-serif;/*--formatting for trivia question--*/
@@ -73,7 +73,7 @@ fieldset div.errorMessage, #ccNumErrorMessage, #cvvErrorMessage {
    top: 50px;
    line-height: 1.2em;
 }
-#errorText, fieldset div.errorMessage, #ccNumErrorMessage, #cvvErrorMessage {
+#errorText, fieldset div.errorMessage, #ccNumErrorMessage, #cvvErrorMessage, #thankYou {
    display: none;
    text-align: center;
    padding: 10px;
@@ -134,7 +134,7 @@ li { display: inline-block;
 figure { width: 300px;}
 figcaption { text-align: center;
 			color: #ffffff;}/*--end swag formatting--*/
-#info1, { background-color:#000000;
+#info1 { background-color:#000000;
 		color: #ffffff;
 		margin: auto;
 			
@@ -169,6 +169,19 @@ input, textarea { text-align: left;
 #mySubmit, #button { margin: auto;
 			text-align:center;
 }
+#figureTime{ width: 200px;
+	margin:auto;
+	
+	height: 50px;
+	font-size: 25px;
+	color: #00FFFF;
+	font-family: Helvetica, Arial, sans-serif; 
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 3px 2px 3px #ff00ff;
+	background-color: #000000;
+	border-radius: 15px;
+	box-shadow:0 0 25px #ff0000;}
 
 footer {margin: auto;
 	width: 500px;

@@ -112,12 +112,20 @@ function validateNumbers(){
 	var cvvElement = document.getElementById("cvv");
 	var ccNumErrMsg = document.getElementById("ccNumErrorMessage");
 	var cvvErrMsg = document.getElementById("cvvErrorMessage");
+		// chapater 9 validation codes
+	var visa = /^4[0-9]{12}(?:[0-9]{3})?$/;
+	var mc = /^5[1-5][0-9]{14}$/;
+	var amex = /^3[47][0-9]{13}$/;
+	var cardNotMatch;
+	var cvvNotThree;
+	
+	
 	try{ //verify ccNum and CVV entries are numerical
 		if (isNaN(ccNumElement.value) || ccNumElement.value ===""){
 			ccNotNum = true;
 		} else {
 			ccNumElement.style.background = "";
-			ccNumErrMsg.style.display = "none";
+			ccNumErrorMessage.style.display = "none";
 		}
 		if (isNaN(cvvElement.value) || cvvElement.value === ""){
 			cvvNotNum = true;
@@ -128,19 +136,39 @@ function validateNumbers(){
 		if (ccNotNum || cvvNotNum){
 			throw "must contain numbers only.";
 		}
-	}
+		//additional code for chapter 9 validation
+		if (!(document.getElementById("visa").checked && (visa.test(ccNumElement))) 
+			|| !(document.getElementById("mc").checked && (mc.test(ccNumElement)))
+			|| !(document.getElementById("amex").checked && (amex.test(ccNumElement)))){
+			cardNotMatch = true;
+			throw "information does not match. Please re-enter.";	
+		} else {	
+			ccNumElement.style.background = "";
+			ccNumErrMsg.stle.display = "none";
+		}
+		
+		if (!(/.{3,}/.test(cvvElement.value))=== true){
+			cvvNotThree = true;
+			throw "must be 3 characters long";
+		}
+	}	
 	catch(msg){
-		if (ccNotNum){
+		if (ccNotNum || cardNotMatch){
 			ccNumElement.style.background = "rgb(204,255,255)";
 			ccNumErrMsg.innerHTML = "The card number " + msg;
 		}
-		if (cvvNotNum){
+		if (cvvNotNum || cvvNotThree){
 			cvvElement.style.background = "rgb(204,255,255)";
 			cvvErrMsg.style.display = "block";
 			cvvErrMsg.innerHTML = "The cvv number " + msg;
 		}
 		formValidity = false;
 	}
+
+
+		
+	
+	
 }	//end function.
 
 /* validate entire form*/
@@ -159,12 +187,34 @@ function validateForm(evt){
 		document.getElementById("errorText").innerHTML = "";
 		document.getElementById("errorText").style.display = "none";
 		document.getElementsByTagName("form")[0].submit();
+		document.getElementById("thankYou").innerHTML = "Thank you for your order.";
+		document.getElementById("thankYou").style.display = "block";
 	} else{
 		document.getElementById("errorText").innerHTML = "Please fix the highlighted areas and re-submit your order.";
 		document.getElementById("errorText").style.display = "block";
 		scroll(0,0);
 	}
 } // end function.
+	function calcTotal() {
+		var itemTotal = 0;
+		var metal1 = document.getElementById("metal1");// get input from check boxes
+		var metal2 = document.getElementById("metal2");
+		var metal3 = document.getElementById("metal3");
+		var metal4 = document.getElementById("metal4");
+		var metal5 = document.getElementById("metal5");
+		var metal6 = document.getElementById("metal6");
+		(metal1.checked) ? (itemTotal += 6.66) : (itemTotal +=0);//calculate total, decimals still need formatting
+		(metal2.checked) ? (itemTotal += 10.00) : (itemTotal +=0);
+		(metal3.checked) ? (itemTotal += 9.99) : (itemTotal +=0);
+		(metal4.checked) ? (itemTotal += 11.11) : (itemTotal +=0);
+		(metal5.checked) ? (itemTotal += 11.11) : (itemTotal +=0);
+		(metal6.checked) ? (itemTotal += 10.00) : (itemTotal +=0);
+		var salesTaxRate = 0.08; //Tempe sales tax
+		itemTotal *= 100;
+		var orderTotal = (itemTotal + (itemTotal * salesTaxRate)) / 100;
+		document.getElementById("Order").addEventListener("click", calcTotal, false);
+	}
+
 /* create event Listeners */
 function createEventListeners(){
 	var form = document.getElementsByTagName("form")[0];
@@ -173,6 +223,7 @@ function createEventListeners(){
 	} else if (form.attachEvent){
 		form.attachEvent("onsubmit",validateForm);
 	}
+	
 }
 /* reset form for fresh input*/
 function setUpPage(){
