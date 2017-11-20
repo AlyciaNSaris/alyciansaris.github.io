@@ -224,11 +224,13 @@ function createEventListeners(){
 		form.attachEvent("onsubmit",validateForm);
 	}
 	
+	
 }
 /* reset form for fresh input*/
 function setUpPage(){
 	removeSelectDefaults();
 	createEventListeners();
+	createMap();
 }
 /* run setup function when page finishes loading*/
 if (window.addEventListener){
