@@ -2,7 +2,7 @@
 <html lang="en">
 <head><!--None More Black
 		  Author: Alycia Saris
-		  Date: 2017-10-16-->
+		  Date: 2017-11-19-->
 <title>nonemoreblack-webSecurity</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--This is where I made my site mobile friendly-->
@@ -58,6 +58,7 @@ document.write("<p></p>");
 <p>It has the abilty to provide information regarding the current browser to the user. Although it is used for diagnostic purposes, this is the information hackers can access about you.</p>
 <p>Your web information is displayed below.</p>
    <!--displays Navigator information -->
+ <div id="map"></div>  
    
    <p1></p1><br>
    <p1></p1><br>
@@ -65,6 +66,10 @@ document.write("<p></p>");
    <p1></p1><br>
    <p1></p1><br>
    <p1></p1><br>
+
+	<p id="local"></p>
+	
+	
 <script>
 "use strict";
 //calls Navigator 
@@ -75,8 +80,59 @@ document.getElementsByTagName("p1")[3].innerHTML = "User agent: " + navigator.us
 document.getElementsByTagName("p1")[4].innerHTML = "Online presence: "  + navigator.onLine;
 document.getElementsByTagName("p1")[5].innerHTML = "Current position: " + navigator.geolocation;
 
+/* declare global variables for chapter 10 */
+var waitForUser;
+
+
+/* additional functions for chapter 10 project*/
+function geoTest(){
+	waitForUser = setTimeout(fail, 10000);
+	if (navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(createMap, fail, {timeout: 10000});
+		
+	} else {
+		fail();
+	}
+}
+/*  get users current position */
+function getLocation(){
+	if (navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(showPosition);
+	} else {
+		fail();
+	}
+}
+/* display latitude and longituse to the screen */
+function showPosition(position){
+	document.getElementById("local").innerHTML = "Latitude: " + position.coords.latitude +
+	 "<br>Longitude: " + position.coords.longitude +
+	 "<br>Altitude: " + position.coords.altitude;
+}
+
+/* create map based on users location*/
+function createMap(position){
+	clearTimeout(waitForUser);
+	var Lat = position.coords.latitude;
+	var Lng = position.coords.longitude;
+	
+	var mapOptions = {
+		center: new google.maps.LatLng(Lat, Lng),
+		zoom: 15
+	};
+	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+function fail(){
+	document.getElementById("map").innerHTML= "Unable to access your current location.";
+}
+if (window.addEventListener){
+	window.addEventListener("load", getLocation, false);
+} else if (window.attachEvent){
+	window.attachEvent("onload", getLocation);
+}	
+
+
 </script>   
-   
+  
 </div>
 <br>
 <br>
@@ -85,6 +141,9 @@ document.getElementsByTagName("p1")[5].innerHTML = "Current position: " + naviga
 	Copyright &copy; 2017 None More Black<br>
 	<a href="mailto:metalalycia666@gmail.com">metalalycia666@gmail.com</a>
 </footer><!--contact info-->
-
 </article>
+</div>
+
+<script src="script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&callback=geoTest"></script>
 </body>

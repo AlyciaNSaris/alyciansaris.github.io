@@ -134,7 +134,7 @@ li { display: inline-block;
 figure { width: 300px;}
 figcaption { text-align: center;
 			color: #ffffff;}/*--end swag formatting--*/
-#info1 { background-color:#000000;
+#info1 , #local{ background-color:#000000;
 		color: #ffffff;
 		margin: auto;
 			
@@ -182,7 +182,12 @@ input, textarea { text-align: left;
 	background-color: #000000;
 	border-radius: 15px;
 	box-shadow:0 0 25px #ff0000;}
-
+#map {
+   min-height: 300px;
+   width: 100%;
+   float: left;
+   clear: left;
+}
 footer {margin: auto;
 	width: 500px;
 	height: 50px;
