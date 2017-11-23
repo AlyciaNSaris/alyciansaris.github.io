@@ -42,7 +42,7 @@
 </div><!--Chapter 8 project-->
 <div id="form">
 <h4>Please select your favorite Behemoth albums</h4>
-	<fieldset id="info1">
+	<fieldset id="albumSelect">
 	<input type="checkBox" id="grom" value="Grom" name="albums">
 	<label for="grom" id="gromLabel">Grom</label>
 	<input type="checkBox" id="demigod" value="Demigod" name="albums">
@@ -127,7 +127,7 @@ if (window.addEventListener) {
 		<img src="deathmetallabel.jpg" height="349" width="250" alt="Death Metal Label"><!--i think its funny-->
   </div>
  
- <div id = "text"><!--begin trivia, begin JavaScript for Chapter 3 assignment -->
+ <div id="text"><!--begin trivia, begin JavaScript for Chapter 3 assignment -->
 	
 	<script>
 	//Use of JavaScript to add content to page
@@ -137,8 +137,8 @@ if (window.addEventListener) {
 	
 	<input id = "myInput" type = "text"><!--format textbox for input-->
 	
-	<fieldset id="submitButton">
-		<input id="mySubmit" type="button" value="Submit" onclick="metalTrivia();"><!--call to function-->
+	<fieldset id="submit">
+		<input id="submit" type="button" value="Submit" onclick="metalTrivia();"><!--call to function-->
 		
 	</fieldset>
 
@@ -180,18 +180,18 @@ if (window.addEventListener) {
 				document.write("<p>Order your random compilation today.</p>");
 			</script>
 		</div>
-	<div id ="info1">
-		<input type="checkBox" id="metal1" value=""/><!--Still playing with formatting, not satisfied with layout.-->
-		<label class="checks" for="metal1">Black Metal ($6.66)</label>
-		<input type="checkBox" id="metal2" value=""/>
+	<div id ="albumSelect">
+		<input type="checkBox" id="metal1" value="" /><!--Still playing with formatting, not satisfied with layout.-->
+		<label for="metal1">Black Metal ($6.66)</label>
+		<input type="checkBox" id="metal2" value="" />
 		<label for="metal2">Death Metal ($10.00)</label>
-		<input type="checkBox" id="metal3" value=""/>
+		<input type="checkBox" id="metal3" value="" />
 		<label for="metal3">Sludge Metal ($9.99)</label>
-		<input type="checkBox" id="metal4" value=""/>
+		<input type="checkBox" id="metal4" value="" />
 		<label for="metal4">Thrash Metal ($11.11)</label>
-		<input type="checkBox" id="metal5" value=""/>
+		<input type="checkBox" id="metal5" value="" />
 		<label for="metal5">Extreme Metal ($11.11)</label>
-		<input type="checkBox" id="metal6" value=""/>
+		<input type="checkBox" id="metal6" value="" />
 		<label for="metal6">Drone Metal ($10.00)</label>
 	<!--	<input type="submit" id="submit" value="Submit">-->
 	</div>
@@ -265,7 +265,7 @@ if (window.addEventListener) {
             </select><br>
 <label for="Zip">Zip</label>
 <input id="Zip" name="Zip" type="number" required="required"/>
-
+</div>
 <div class="errorMessage"></div>
 
 </fieldset>
@@ -322,7 +322,7 @@ if (window.addEventListener) {
 <div id="thankYou"></div>
 </div>
 </fieldset>
-<fieldset>
+<fieldset id="submit">
 	<input type="submit" value="Submit" id="submit">
 </fieldset>
 </form>
@@ -341,7 +341,7 @@ if (window.addEventListener) {
 	Copyright &copy; 2017 None More Black<br>
 	<a href="mailto:metalalycia666@gmail.com">metalalycia666@gmail.com</a>
 </footer><!--contact info-->
-</div>
+
 <script src="script.js"></script>
 </body>
 </html>
