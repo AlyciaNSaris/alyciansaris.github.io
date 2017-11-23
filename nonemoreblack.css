@@ -67,7 +67,7 @@ h1 {background-color: #000000;
 		font-family: Helvetica, sans-serif;/*--formatting for trivia question--*/
         padding: 10px; 
 	    min-width: 400px;}
-fieldset div.errorMessage, #ccNumErrorMessage, #cvvErrorMessage {
+fieldset /*div.errorMessage, #ccNumErrorMessage, #cvvErrorMessage */{
    color: #ffffff;
    position: relative;
    top: 50px;
@@ -100,7 +100,7 @@ table { margin: auto;
 		border-spacing: 0;
 		table-layout: fixed; }/*--stopped my table from auto-sizing around text--*//*--used for calendar, venue page and music page--*/
 td { font-size: 10px;}/*--needed the data font a little smaller than the rest of the table--*/
-td, th { border: 1px solid #aa0000;
+th, td { border: 1px solid #aa0000;
 		padding: 0.5em;
 		color: #ffffff;
 		font-family:Helvetica, Arial, sans-serif;
@@ -147,10 +147,11 @@ figcaption { text-align: center;
 		font-family: Helvetica, sans-serif;
         padding: 10px; 
 	    min-width: 400px;}/*--Use on featured page to promote local bands,menu--*/
-#address, #paymentinfo {background-color:#000000;
+#address, #paymentInfo, #albumSelect {background-color:#000000;
 		color: #ffffff;
 		margin: auto;
-		font-family: Helvetica,sans-serif;}
+		font-family: Helvetica,sans-serif;
+		width: 800px;}
 		
 label { margin:auto;
 		width: 150px; 
@@ -166,8 +167,12 @@ input, textarea { text-align: left;
 				  margin: 10px; 
                   display: block;
 					} 
-#mySubmit, #button { margin: auto;
+					
+#mySubmit, #button, #submit{ margin: auto;
 			text-align:center;
+			font-size:15px;
+			border: #000000;
+			
 }
 #figureTime{ width: 200px;
 	margin:auto;
