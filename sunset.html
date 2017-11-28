@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!--None More Black
+		  Author: Alycia Saris
+		  Date:10/29/2017
+		  Chapter 11 using Ajax/php-->
+<title>nonemoreblack-home</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--This is where I made my site mobile friendly-->
+<link href="nonemoreblack.css" rel="stylesheet">
+
+<script src="modernizr.custom.05819.js"></script><!--JavaScript file-->
+</head>
+<body>
+<div id="wrapper"><!-- CSS Adds some flare to my page-->
+<header><h1>None More Black</h1></header>
+<br>
+<nav>
+<div id="menu"><!--css for horizontal navigation-->
+	<ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="calendar.html">Calendar</a></li> 
+	<li><a href="featured.html">Featured Artist</a></li><!--Featuring noteworthy artist, can change monthly-->
+	<li><a href="gear.html">Gear</a></li><!--sometimes you need to shop-->
+	<li><a href="venues.html">Venues</a></li><!--This is info I have often wondered about-->
+	<li><a href="webSecurity.html">Security</a></li><!--link to web security info NEW-->
+	<li><a href="clock.html">Clock</a></li><!--link to ch.7 project-->
+	
+	</ul>
+</div>
+</nav>
+
+<h2>Sunset</h2>
+<section class="week">
+<div id = "text">
+<p class="error"></p>
+<table>
+<thead>
+	<tr>
+	<th colspan="2">Sunset times for Phoenix, AZ <caption></caption></th>
+	</tr>
+	<tr>
+		<th>Day</th>
+		<th>Time</th>
+	</tr>
+</thead>
+	<tbody>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	</tbody>	
+</table>
+	<p class="credit">Powered by <a href="http://sunrise-sunset.org">Sunrise-Sunset.org</a></p>
+</div>
+</section>	
+<br>
+<br>
+
+<footer>
+	Copyright &copy; 2017 None More Black<br>
+	<a href="mailto:metalalycia666@gmail.com">metalalycia666@gmail.com</a>
+</footer><!--contact info-->
+</div>
+<script>
+/* declare global variables */
+var httpRequest = false;
+var sunTime;
+var phx = "Phoenix, AZ";
+
+function getRequestObject(){
+	try {
+		httpRequest = new XMLHttpRequest();
+	}
+	catch (requestError){
+		document.querySelector("p.error").innerHTML = "Sunrise-Sunset not supported by your browser.";
+		document.querySelector("p.error").style.display = "block";
+		return false;
+	}
+	return httpRequest;
+}
+/* get sun times for PHOENIX only*/
+function getSunTimes(evt){
+	var latitude = 33.448376;
+	var longitde = -112.074036;
+	if (evt.type !== "load"){
+		if (evt.target){
+			phx = evt.target.innerHTML;
+		}else if (evt.srcElement){
+			phx = evt.srcElement.innerHTML;
+		}
+	}
+	if (!httpRequest){
+	httpRequest = getRequestObject();
+	}
+	httpRequest.abort();
+	httpRequest.open("get", "nmb.php?");
+	httpRequest.send(null);
+	httpRequest.onreadystatechange = fillSun;
+}
+/* fill table with days of week and sunset times*/
+function fillSun(){
+	if(httpRequest.readyState === 4 && httpRequest.status === 200){
+		sunTime = JSON.parse(httpRequest.responseText);
+		var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+		var dateValue = new Date(sunTime.daily.data[0].time);
+		var dayOfWeek = dateValue.getDay();
+		var rows = document.querySelectorAll("section.week table tbody tr");
+		for (var i = 0; i < rows.length; i++){
+			var firstCell = rows[i].getElementsByTagName("td")[0];
+			var secondCell = rows[i].getElementsByTagName("td")[1];
+			firstCell.innerHTML = days[daysOfWeek];
+			if (dayOfWeek + 1 === 7){
+				dayOfWeek = 0;
+			} else {
+				dayOfWeek++;
+			}
+		}
+	}
+	
+}//end function
+
+if (window.addEventListener) {
+   window.addEventListener("load", getSunTimes, false);
+} else if (window.attachEvent) {
+   window.attachEvent("onload", getSunTimes);
+}
+</script>
+</body>
+</html>
+
+

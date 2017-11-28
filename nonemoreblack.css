@@ -41,7 +41,7 @@ h1 {background-color: #000000;
 		padding: 8px 8px 8px 8px;}
 #menu a:hover{ color: #dd0000;/*--end navigation--*/
 		 }
-#text, #section, #selectedAlbums { text-align: center;/*--I used this id throughout the site so that my text would appear on the page like a concert t shirt--*/
+#text, #section, #selectedAlbums, #credit { text-align: center;/*--I used this id throughout the site so that my text would appear on the page like a concert t shirt--*/
 		color:#ffffff;/*--shows up on black--*/
 		font-size: 15px;
 	font-family: Helvetica, Arial, sans-serif; 
@@ -205,4 +205,4 @@ footer {margin: auto;
 	background-color: #000000;
 	border-radius: 15px;
 	box-shadow:0 0 20px #ff0000;}/*--formatting the footer similarly to the navigation gave site a completed look--*/ 
-	
+
