@@ -73,7 +73,7 @@ fieldset /*div.errorMessage, #ccNumErrorMessage, #cvvErrorMessage */{
    top: 50px;
    line-height: 1.2em;
 }
-#errorText, fieldset div.errorMessage, #ccNumErrorMessage, #cvvErrorMessage, #thankYou {
+#errorText, fieldset div.errorMessage, #ccNumErrorMessage, #cvvErrorMessage, #thankYou, #nameErrText, #emailErrText, #bandErrText {
    display: none;
    text-align: center;
    padding: 10px;

@@ -271,13 +271,13 @@ if (window.addEventListener) {
 <input id="Zip" name="Zip" type="number" required="required"/>
 
 <div class="errorMessage"></div>
-
+<div id="errorText"></div>
 </fieldset>
 
 <br>
 
-</form>
-<form>
+
+
 <fieldset id="paymentInfo">
 <h4>Enter Payment Info</h4>
 <div id ="cards">
@@ -292,7 +292,7 @@ if (window.addEventListener) {
 <label for="ccNum">Card #</label>
 <input id="ccNum" name="CardNumber" type="number" required="required"/>
 <div id="ccNumErrorMessage"></div>
-<div id="errorText"></div>
+
 </div>
 <div>
 <label for="expMonth" id="expMonLabel">Expiration Month</label>
@@ -323,6 +323,7 @@ if (window.addEventListener) {
 <input id="cvv" name="CVVValue" type="number" required="required"/>
 <div id="cvvErrorMessage"></div>
 <div class="errorMessage"></div>
+<div id="errorText"></div>
 <div id="thankYou"></div>
 </div>
 </fieldset>
@@ -333,10 +334,7 @@ if (window.addEventListener) {
 
 </article>
 
-<script>
-//receive order and calculate total moved to script page
 
-</script>
 
 <br>
 <br>
@@ -346,6 +344,7 @@ if (window.addEventListener) {
 	<a href="mailto:metalalycia666@gmail.com">metalalycia666@gmail.com</a>
 </footer><!--contact info-->
 </div>
+<script src="jquery-1.11.1.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

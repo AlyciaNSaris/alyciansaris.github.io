@@ -1,6 +1,6 @@
 /*	JavaScript CIS166AA
 *	Author:	Alycia Saris
-*	Date:	2017-10-23
+*	Date:	2017-12/03
 *
 *	None More Black
 *	Functions
@@ -8,6 +8,67 @@
 
 	
 "use strict";
+// UPDATED JQuery CODE FOR CHAPTER 12 
+//CORRECTED CODE FROM CHAPTER 4-->
+//Finally got this working the way I intended.  Reviewed chapter 4 thouroughly. Thank you for your help.-->
+function validateInput() {
+	//var errorDiv = document.getElementById("errorText");// commented out code for chapter 12
+	var myName= document.getElementById("myName").value;
+    var myEmail = document.getElementById("myEmail").value;
+	var bandname = document.getElementById("bandname").value;
+	//var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+	var filter = /^[_\w\-]+(\.[_\w\-]+)*@[\w\-]+(\.[\w\-]+)*(\.[\D]{2,6})$/;
+	var infoValidity = true;
+//email validation also coincides with chapter 9-->
+try{	
+	if (myName === ""){
+		throw "Please enter a name.";
+		myName.focus;
+		return false;
+	}
+}	
+catch(message){
+	console.log(message); 
+	//errorDiv.style.display = "block";
+	//errorDiv.innerHTML = message;
+	$("#nameErrText").show();
+	$("#nameErrText").html(message);
+}
+try{		
+	if (filter.test(myEmail.value) === false) {
+		throw "Please provide a valid email address.";
+		myEmail.focus;
+		return false;
+	}
+}
+catch(message){
+	console.log(message); 
+	//errorDiv.style.display = "block";
+	//errorDiv.innerHTML = message;
+	$("#emailErrText").show();
+	$("#emailErrText").html(message);
+}
+try{
+	if (bandname === ""){
+		throw "Please enter your bands name.";
+		bandname.focus;
+		return false;
+    }	
+}
+catch(message){
+	console.log(message); 
+	//errorDiv.style.display = "block";
+	//errorDiv.innerHTML = message;
+	$("#bandErrText").show();
+	$("#bandErrText").html(message);
+	
+}
+if (infoValidity === true){
+	$("info1").submit();
+}
+ 
+}//end function
+
 
 /* declare global variables */
 var formValidity = true;
@@ -51,8 +112,11 @@ function validateAddress(fieldsetId){
 		}
 	}
 	catch(msg){
-		errorDiv.style.display = "block";
-		errorDiv.innerHTML = msg;
+		//errorDiv.style.display = "block";
+		//errorDiv.innerHTML = msg;
+		$("#errorText").show();
+		$("#errorText").html(msg);
+		
 		formValidity = false;
 	}
 }// end function.
@@ -96,11 +160,15 @@ function validatePayment(){
 		}
 		if (!fieldsetValidity){
 			throw "Please complete all payment information.";
-		} else errorDiv.style.display = "none";
+		} else errorDiv.style.display = "none";   
+		
+				
 	}
 	catch(msg){
-		errorDiv.style.display = "block";
-		errorDiv.innerHTML = msg;
+		//errorDiv.style.display = "block"; 
+		//errorDiv.innerHTML = msg;
+		$("#errorText").show();
+		$("#errorText").html(msg);
 		formValidity = false;
 	}
 }// end function.
@@ -178,7 +246,8 @@ function validateForm(evt){
 	} else{
 		evt.returnValue = false; // prevents form form submitting in IE8
 	}
-	formValidity = true;
+	 
+		formValidity = true;
 	validateAddress("address");
 	validatePayment();
 	validateNumbers();
@@ -223,9 +292,16 @@ function createEventListeners(){
 	} else if (form.attachEvent){
 		form.attachEvent("onsubmit",validateForm);
 	}
-	
+ 	var info = document.getElementsByTagName("info1"); 
+	if (info.addEventListener){
+		info.addEventListener("submit", validateInput, false);
+	} else if (info.attachEvent){
+		info.attachEvent("onsubmit", validateInput);
+	}
+	 
 	
 }
+
 /* reset form for fresh input*/
 function setUpPage(){
 	removeSelectDefaults();
