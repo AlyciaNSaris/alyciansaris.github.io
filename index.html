@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><!--None More Black
-		  Author: Alycia Saris
-		  Date:10/01/2017-->
+		Author: Alycia Saris
+		Date:5/1/2016-->
 <title>nonemoreblack-home</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--This is where I made my site mobile friendly-->
 <link href="nonemoreblack.css" rel="stylesheet">
-
-<script src="modernizr.custom.05819.js"></script><!--JavaScript file-->
+<!--[if lt IE 9]><!--I made file with this shim on it to easily paste it on all my pages>
+<script src="http://html5shim.googlecode/svn/trunk/html5.js">
+</script>
+<![endif]-->
 </head>
 <body>
 <div id="wrapper"><!-- CSS Adds some flare to my page-->
@@ -18,333 +20,37 @@
 <div id="menu"><!--css for horizontal navigation-->
 	<ul>
 	<li><a href="index.html">Home</a></li>
-	<li><a href="calendar.html">Calendar</a></li> 
-	<li><a href="featured.html">Featured Artist</a></li><!--Featuring noteworthy artist, can change monthly-->
+	<li><a href="news.html">News</a></li>  
+	<li><a href="calendar.html">Calendar</a></li> <!--Limited calendar, might expand in future-->
+	<li><a href="locals.html">Locals</a></li><!--Featuring a local band, can change monthly-->
 	<li><a href="gear.html">Gear</a></li><!--sometimes you need to shop-->
 	<li><a href="venues.html">Venues</a></li><!--This is info I have often wondered about-->
-	<li><a href="webSecurity.html">Security</a></li><!--link to web security info NEW-->
-	<li><a href="clock.html">Clock</a></li><!--link to ch.7 project-->
-	</ul>
+</ul>
 </div>
 </nav>
 
 
-<article>
+<main>
 <div id="text"><!--formats my text-->
-
-      <script>
-         /* Add content to web page
-         example of hands-on 1-1,1-5*/
-         document.write("<p>Welcome to None More Black.</p>");
-         document.write("<p>This is a not for profit information only guide to the metal scene in the greater Phoenix area.</p>");
-      </script>
-
-</div><!--Chapter 8 project-->
-<h2><a href="sunset.html">Sunset</a></h2><!--link to chapter 11-->
-<p id="text">Please link to chapter 11 project by clicking sunset</p>
-<div id="form">
-<h4>Please select your favorite Behemoth albums</h4>
-	<fieldset id="info1">
-	<input type="checkBox" id="grom" value="Grom" name="albums">
-	<label for="grom" id="gromLabel">Grom</label>
-	<input type="checkBox" id="demigod" value="Demigod" name="albums">
-	<label for="demigod" id="demigodLabel">Demigod</label>
-	<input type="checkBox" id="apostasy" value="The Apostasy" name="albums">
-	<label for="apostasy" id="apostasyLabel">The Apostasy</label>
-	<input type="checkBox" id="evangelion" value="Evangelion" name="albums">
-	<label for="evangelion" id="evangelionLabel">Evangelion</label>
-	<input type="checkBox" id="zos" value="Zos Kia Cultus" name="albums">
-	<label for="zos" id="zosLabel">Zos Kia Cultus</label>
-	</fieldset>
-</div>
-<br>
-<br>
-<section id="selection">
-	<div id="albumSelectSection">
-	  <h4>Selected Albums</h4>
-	  <ul id="selectedAlbums"></ul>
-	</div>
-</section>
-<script>
-/* global variables */
-var selection = {}; // selction object
-var album = []; // empty array
-function chooseAlbum(event){
-	if (event === undefined){ // get caller element in IE8
-		event = window.event;
-	}
-	var callerElement = event.target || event.srcElement;
-	var albumName = callerElement.value;
-	if (callerElement.checked){ // box checked by user
-		album.push(albumName); //add album to list via checkbox
-		var newAlbum = document.createElement("li");
-		newAlbum.innerHTML = albumName;
-		document.getElementById("selectedAlbums").appendChild(newAlbum); // add album to array
-		//display array to screen
-		document.getElementById("selection").style.display = "block";
-		document.getElementById("albumSelectSection").style.display = "block";
-		}else { // box unchecked
-		  var listItems= document.querySelectorAll("#selectedAlbums li");
-			for (var i = 0; i < listItems.length; i++){ // loop through array
-				if(listItems[i].innerHTML === albumName) { // remove item from list
-					album.splice(i, 1);
-					listItems[i].parentNode.removeChild(listItems[i]);
-				}
-			}
-	}
-}
-// convert form input to strings fo
-function convertToString() {
-   // convert album array to string
-   arrayString = album.toString();
-   // convert profile object to string
-   objectString = JSON.stringify(selection);
-}
-      
-        
-function createEventListener(){
-	var albums = document.getElementsByName("albums");
-	if (albums[0].addEventListener) {
-		for (var i = 0; i < albums.length; i++) {
-        albums[i].addEventListener("change", chooseAlbum, false);
-		}
-	} else if (albums[0].attachEvent) {
-     for (var i = 0; i < albums.length; i++) {
-         albums[i].attachEvent("onchange", chooseAlbum);
-      }
-		
-      }
-	 
-}
-if (window.addEventListener) {
-   window.addEventListener("load", createEventListener, false);
-} else if (window.attachEvent) {
-   window.attachEvent("onload", createEventListener);
-}
-
-</script>
-<!--end chapter 8 project-->
+<p>Welcome to None More Black.<br>
+This is a not for profit information only guide to the metal scene in the greater Phoenix area.<br>
+Because it is not for profit, certain weak genres of wanna-be metal bands will not be represented.
+Because of the recent actions of the Phoenix City Council towards members of The Satanic Temple,
+no Christian bands will be represented.<p>
 
 <h2>The Funnies</h2><!--Again this can be switched monthly-->
-  
-  <div id="figure"><!--css to center image-->
-		<img src="deathmetallabel.jpg" height="349" width="250" alt="Death Metal Label"><!--i think its funny-->
-  </div>
- 
- <div id="text"><!--begin trivia, begin JavaScript for Chapter 3 assignment -->
-	
-	<script>
-	//Use of JavaScript to add content to page
-		document.write("<p>Who is credited with coining the phrase 'None More Black'?</p>");
-		document.write("<p>Is it Nigel Tufnel, Ozzy Osbourne or Lemmy Kilmeister?</p>");
-	</script>
-	
-	<input id = "myInput" type = "text"><!--format textbox for input-->
-	
-	<fieldset id="submit">
-		<input id="submit" type="button" value="Submit" onclick="metalTrivia();"><!--call to function-->
-		
-	</fieldset>
-
-	
-	<p>
-	<script>
-	// begin function to execute switch statements
-	function metalTrivia() {
-		var text; // declare variables
-		var metalIcons = document.getElementById("myInput").value;// get input from user
-		
-		switch (metalIcons) {
-			case "Nigel Tufnel":
-				divOutput.innerHTML = "Crank it to 11, You know your metal!!";				
-			break;
-			case "Ozzy Osbourne":
-				divOutput.innerHTML = "A living legend, but incorrect";
-			break;
-			case "Lemmy Kilmeister":
-				divOutput.innerHTML = "RIP Lemmy. A metal god and an incorrect answer.";
-			break;
-			default:
-				divOutput.innerHTML = "Just watch 'This is Spinal Tap'.";
-		}
-		
-	}
-	</script>
-	</p>
-
-</div> <!--end trivia-->
-
-
-
-<h2>The Menu</h2>
-
-		<!--add content to page using JavaScript -->
-		<div id = "text">
-			<script>
-				document.write("<p>Order your random compilation today.</p>");
-			</script>
-		</div>
-	<div id ="albumSelect">
-		<input type="checkBox" id="metal1" value="" /><!--Still playing with formatting, not satisfied with layout.-->
-		<label for="metal1">Black Metal ($6.66)</label>
-		<input type="checkBox" id="metal2" value="" />
-		<label for="metal2">Death Metal ($10.00)</label>
-		<input type="checkBox" id="metal3" value="" />
-		<label for="metal3">Sludge Metal ($9.99)</label>
-		<input type="checkBox" id="metal4" value="" />
-		<label for="metal4">Thrash Metal ($11.11)</label>
-		<input type="checkBox" id="metal5" value="" />
-		<label for="metal5">Extreme Metal ($11.11)</label>
-		<input type="checkBox" id="metal6" value="" />
-		<label for="metal6">Drone Metal ($10.00)</label>
-	<!--	<input type="submit" id="submit" value="Submit">-->
-	</div>
-
-<!--Additions for chaprer 6 assignment.-->
-
-<form novalidate="novalidate">
-<fieldset id="address">
-<h4>Address</h4>
-<label for="Fname">First Name</label>
-<input id ="Fname" name="FirstName" type="text" required="required"/>
-<label for="LName">Last Name</label>
-<input id="LName" name="LastName" type="text" required="required"/>
-<label for="Street">Street Address</label>
-<input id="Street" name="Street" type="text" required="required"/>
-<label for="City">City</label>
-<input id="City" name="City" type="text" required="required"/>
-<label for="State">State</label>
-<select id="State" name="State" required="required">
-			   <option value="AL">AL</option>
-               <option value="AK">AK</option>
-               <option value="AZ">AZ</option>
-               <option value="AR">AR</option>
-               <option value="CA">CA</option>
-               <option value="CO">CO</option>
-               <option value="CT">CT</option>
-               <option value="DE">DE</option>
-               <option value="DC">DC</option>
-               <option value="FL">FL</option>
-               <option value="GA">GA</option>
-               <option value="HI">HI</option>
-               <option value="ID">ID</option>
-               <option value="IL">IL</option>
-               <option value="IN">IN</option>
-               <option value="IA">IA</option>
-               <option value="KS">KS</option>
-               <option value="KY">KY</option>
-               <option value="LA">LA</option>
-               <option value="ME">ME</option>
-               <option value="MD">MD</option>
-               <option value="MA">MA</option>
-               <option value="MI">MI</option>
-               <option value="MN">MN</option>
-               <option value="MS">MS</option>
-               <option value="MO">MO</option>
-               <option value="MT">MT</option>
-               <option value="NE">NE</option>
-               <option value="NV">NV</option>
-               <option value="NH">NH</option>
-               <option value="NJ">NJ</option>
-               <option value="NM">NM</option>
-               <option value="NY">NY</option>
-               <option value="NC">NC</option>
-               <option value="ND">ND</option>
-               <option value="OH">OH</option>
-               <option value="OK">OK</option>
-               <option value="OR">OR</option>
-               <option value="PA">PA</option>
-               <option value="RI">RI</option>
-               <option value="SC">SC</option>
-               <option value="SD">SD</option>
-               <option value="TN">TN</option>
-               <option value="TX">TX</option>
-               <option value="UT">UT</option>
-               <option value="VT">VT</option>
-               <option value="VA">VA</option>
-               <option value="WA">WA</option>
-               <option value="WV">WV</option>
-               <option value="WI">WI</option>
-               <option value="WY">WY</option>
-            </select><br>
-<label for="Zip">Zip</label>
-<input id="Zip" name="Zip" type="number" required="required"/>
-
-<div class="errorMessage"></div>
-<div id="errorText"></div>
-</fieldset>
-
-<br>
-
-
-
-<fieldset id="paymentInfo">
-<h4>Enter Payment Info</h4>
-<div id ="cards">
-<input id="visa" name="PaymentType" type="radio" value="Visa"/>
-<label for="visa">Visa</label>
-<input id="mastercard" name="PaymentType" type="radio" value="Mastercard"/>
-<label for="mastercard">Mastercard</label>
-<input id="amEx" name="PaymentType" type="radio" value="AmericanExpress"/>
-<label for="amEx">American Express</label>
+<div id="figure"><!--css to center image-->
+<img src="deathmetallabel.jpg" height="349" width="250" alt="Death Metal Label"><!--i think its funny-->
 </div>
-<div>
-<label for="ccNum">Card #</label>
-<input id="ccNum" name="CardNumber" type="number" required="required"/>
-<div id="ccNumErrorMessage"></div>
-
 </div>
-<div>
-<label for="expMonth" id="expMonLabel">Expiration Month</label>
-	<select id="expMonth" name="ExpMonth" required="required">
-		<option value="01">01</option>
-		<option value="02">02</option>
-		<option value="03">03</option>
-		<option value="04">04</option>
-		<option value="05">05</option>
-		<option value="06">06</option>
-		<option value="07">07</option>
-		<option value="08">08</option>
-		<option value="09">09</option>
-		<option value="10">10</option>
-		<option value="11">11</option>
-		<option value="12">12</option>
-	</select><br>
-<label for="expYear" id="expYearLabel">Expiration Year</label>
-	<select id="expYear" name="ExpYear" required="required">
-		<option value="2017">2017</option>
-		<option value="2018">2018</option>
-		<option value="2019">2019</option>
-		<option value="2020">2020</option>
-		<option value="2021">2021</option>
-		<option value="2022">2022</option>
-	</select><br>
-<label for="cvv">CVV #</label>
-<input id="cvv" name="CVVValue" type="number" required="required"/>
-<div id="cvvErrorMessage"></div>
-<div class="errorMessage"></div>
-<div id="errorText"></div>
-<div id="thankYou"></div>
-</div>
-</fieldset>
-<fieldset id="submit">
-	<input type="submit" value="Submit" id="submit">
-</fieldset>
-</form>
-
-</article>
-
-
-
+</main>
 <br>
 <br>
 <br>
 <footer>
-	Copyright &copy; 2017 None More Black<br>
-	<a href="mailto:metalalycia666@gmail.com">metalalycia666@gmail.com</a>
-</footer><!--contact info-->
+	Copyright &copy; 2016 None More Black<br>
+	<a href="mailto:metalalycia666@gmail.com">metalalycia666@gmail.com</a></footer>
 </div>
-<script src="jquery-1.11.1.min.js"></script>
-<script src="script.js"></script>
+
 </body>
 </html>

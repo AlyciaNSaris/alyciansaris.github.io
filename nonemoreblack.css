@@ -3,19 +3,19 @@
 	
 body {background-image: url(stage.gif);/*--This photo was taken with my 35ml camera and altered to make a unique background.--*/
 	background-color: #000000;
-	font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 #wrapper { background-color: #000000;/*--Of course its black--*/
 			width: 1000px;
 			margin-left: auto;
 			margin-right: auto;} 
 h1 {background-color: #000000;
-	background-image: url(banner1.gif);/*--Another 35ml photo taken by me.--*/
-	background-position: center;
-	background-repeat: no-repeat;
-	height: 100px;
-	width: 1000px;
-	margin: 0px;
+background-image: url(banner1.gif);/*--Another 35ml photo taken by me.--*/
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 100px;
+		width: 1000px;
+		margin: 0px;
 	text-indent: 100%;
 	white-space: nowrap;
     overflow: hidden;	
@@ -23,7 +23,7 @@ h1 {background-color: #000000;
 	border-radius: 15px;}/*--This mild touch gave the site a polished look--*/
 #menu {	width: 1000px;/*--I chose to format the navigation this way because I like it.--*/
 	height: 50px;/*--I had to find the instructions online, well worth it--*/
-	font-size: 15px;
+	font-size: 20px;
 	font-family: Helvetica, Arial, sans-serif; 
 	font-weight: bold;
 	text-align: center;
@@ -41,7 +41,7 @@ h1 {background-color: #000000;
 		padding: 8px 8px 8px 8px;}
 #menu a:hover{ color: #dd0000;/*--end navigation--*/
 		 }
-#text, #section, #selectedAlbums, #credit { text-align: center;/*--I used this id throughout the site so that my text would appear on the page like a concert t shirt--*/
+#text { text-align: center;/*--I used this id throughout the site so that my text would appear on the page like a concert t shirt--*/
 		color:#ffffff;/*--shows up on black--*/
 		font-size: 15px;
 	font-family: Helvetica, Arial, sans-serif; 
@@ -49,40 +49,8 @@ h1 {background-color: #000000;
 	width: 800px;/*--i played with the margins and spacing quite a bit to have a more polished look--*/
 	margin:auto;
 	white-space: pre-wrap; }
-	
-#paymentInfo {text-align:left;
-		color:#ffffff;
-		font-size: 15px;
-		font-family: Helvetica, Arial, sans-serif;
-		font-weight:normal;
-		width: 1000px;
-		margin:auto;
-			
-}	
 #gallery { text-align: center;
 		margin: auto; }	/*--I realizied i goofed when I changed the text margins, formatting change for swag page.--*/
-#myInput, #dateSelected { background-color:#000000;
-		color: #ffffff;
-		margin: auto;
-		font-family: Helvetica, sans-serif;/*--formatting for trivia question--*/
-        padding: 10px; 
-	    min-width: 400px;}
-fieldset /*div.errorMessage, #ccNumErrorMessage, #cvvErrorMessage */{
-   color: #ffffff;
-   position: relative;
-   top: 50px;
-   line-height: 1.2em;
-}
-#errorText, fieldset div.errorMessage, #ccNumErrorMessage, #cvvErrorMessage, #thankYou, #nameErrText, #emailErrText, #bandErrText {
-   display: none;
-   text-align: center;
-   padding: 10px;
-   margin: 0 auto;
-   margin: 15px 15px 0;
-   background: rgb(124,124,136);
-   color: white;
-   border: 2px solid rgb(190,50,38);	
-}
 h2 { text-align: center;/*--I like the teal and aqua shadow--*/
 	text-shadow: 3px 2px 3px #00ffff;
 	font-family: Helvetica, Arial, sans-serif;
@@ -100,11 +68,10 @@ table { margin: auto;
 		border-spacing: 0;
 		table-layout: fixed; }/*--stopped my table from auto-sizing around text--*//*--used for calendar, venue page and music page--*/
 td { font-size: 10px;}/*--needed the data font a little smaller than the rest of the table--*/
-th, td { border: 1px solid #aa0000;
+td, th { border: 1px solid #aa0000;
 		padding: 0.5em;
 		color: #ffffff;
 		font-family:Helvetica, Arial, sans-serif;
-		font-size: 12px;
 		vertical-align: super; }/*--This kept the dates in the upper corner of the cell--*/
 h3 { text-align: center;
 	text-shadow: 3px 2px 3px #00ffff;
@@ -118,13 +85,13 @@ h4 {text-align: center;
 	color: #ffffff;
 	font-weight: normal;
 	font-size: 15px;
-	 }/*--basically used on the featured page to keep the page vibrant without alot of graphics--*/
+	 }/*--basically used on the locals page to keep ththe page vibrant without alot of graphics--*/
 .floatleft {	float: left;
 		padding: 10px 10px 10px 200px;
-		margin: auto;}/*--needed for featured page--*/
+		margin: auto;}/*--needed for locals page--*/
 .details { overflow: auto;}/*--also needed to properly execute the float--*/
 
-.clearright { clear: right; }/*--needed for featured page--*/
+.clearright { clear: right; }/*--needed for locals page--*/
 ul { list-style-type: none;
 	margin: auto;}/*--this is were i formatted the swag page--*/
 li { display: inline-block;
@@ -134,65 +101,23 @@ li { display: inline-block;
 figure { width: 300px;}
 figcaption { text-align: center;
 			color: #ffffff;}/*--end swag formatting--*/
-#info1 , #local{ background-color:#000000;
-		color: #ffffff;
-		margin: auto;
-			
-		font-family: Helvetica, sans-serif;
-        padding: 10px; 
-	    min-width: 400px;}
-#form { background-color:#000000;
-		color: #ffffff;
-		margin: auto;		
-		font-family: Helvetica, sans-serif;
-        padding: 10px; 
-	    min-width: 400px;}/*--Use on featured page to promote local bands,menu--*/
-#address, #paymentInfo, #albumSelect {background-color:#000000;
-		color: #ffffff;
-		margin: auto;
-		font-family: Helvetica,sans-serif;
-		width: 800px;}
-		
-label { margin:auto;
-		width: 150px; 
-		font-size: 15px;
-		text-align: left; 
-		}
 
-#time{	margin: auto;
+form { 	background-color:#000000;
+		color: #ffffff;
 		text-align: center;
-		color: #ffffff;}		
+	font-family: Helvetica, sans-serif;
+    padding: 10px; 
+	min-width: 400px;}/*--Used on locals page to promote local bands--*/
+	label { float: left;
+	width: 150px; 
+    clear: left;
+	text-align: right; 
+	padding-right: 10px;
+	margin-top: 10px; }
+input, textarea { margin-top: 10px; 
+                  display: block; } 
+#mySubmit { margin-left: 160px; }
 
-input, textarea { text-align: left;
-				  margin: 10px; 
-                  display: block;
-					} 
-					
-#mySubmit, #button, #submit{ margin: auto;
-			text-align:center;
-			font-size:15px;
-			border: #000000;
-			
-}
-#figureTime{ width: 200px;
-	margin:auto;
-	
-	height: 50px;
-	font-size: 25px;
-	color: #00FFFF;
-	font-family: Helvetica, Arial, sans-serif; 
-	font-weight: bold;
-	text-align: center;
-	text-shadow: 3px 2px 3px #ff00ff;
-	background-color: #000000;
-	border-radius: 15px;
-	box-shadow:0 0 25px #ff0000;}
-#map {
-   min-height: 300px;
-   width: 100%;
-   float: left;
-   clear: left;
-}
 footer {margin: auto;
 	width: 500px;
 	height: 50px;
@@ -205,4 +130,4 @@ footer {margin: auto;
 	background-color: #000000;
 	border-radius: 15px;
 	box-shadow:0 0 20px #ff0000;}/*--formatting the footer similarly to the navigation gave site a completed look--*/ 
-
+	
